@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if( !isset($_SESSION["login"])){
+  header("Location: login.php");
+  exit;
+}
 
 require 'functions.php';
 
@@ -67,12 +73,14 @@ if(isset($_POST["cari"])){
             <tr>
             <td><?= $i; ?></td>
             <td><?= $row["nama"]; ?></td>
-            <td><img src="asset/IMG/<?= $row["gambar"]; ?>" width="150"></td>
+            <td><img src="../asset/IMG/<?= $row["gambar"]; ?>" width="150"></td>
             <td><?= $row["kota"]; ?></td>
             <td><?= $row["tanggal"]; ?></td>
             <td> 
             <a href="update.php?id=<?= $row["id"]; ?>">update</a> |
             <a href="delete.php?id=<?=  $row["id"]; ?>" onclick="return confirm('yakin?');">delete</a>
+            <a href="details.php?id=<?= $row["id"]; ?>" class="badge text-bg-dark text-decoration-none">details</a>
+
             </td>
             </tr>
             <?php $i++; ?>
