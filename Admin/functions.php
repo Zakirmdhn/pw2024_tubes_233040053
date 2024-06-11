@@ -26,9 +26,10 @@ function tambah($data) {
 
     $kota = htmlspecialchars($data["kota"]);
     $tanggal = htmlspecialchars($data["tanggal"]);
+    $details = htmlspecialchars($data["details"]);
 
     $query = "INSERT INTO travel VALUES
-            (NULL, '$nama', '$gambar', '$kota', '$tanggal')
+            (NULL, '$nama', '$gambar', '$kota', '$tanggal', '$details')
             ";
     mysqli_query($conn, $query) ;
     
@@ -99,12 +100,14 @@ function update($data) {
     }
     $kota = htmlspecialchars($data["kota"]);
     $tanggal = htmlspecialchars($data["tanggal"]);
+    $details = htmlspecialchars($data["details"]);
 
     $query = "UPDATE travel SET
             nama = '$nama',
             gambar = '$gambar',
             kota = '$kota',
-            tanggal = '$tanggal'
+            tanggal = '$tanggal',
+            details = '$details'
             WHERE id  = '$id'
             ";
     mysqli_query($conn, $query);

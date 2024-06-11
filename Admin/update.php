@@ -68,6 +68,11 @@ if(isset($_POST["update"])) {
                 <input type="text" class="form-control" id="tanggal" name="tanggal"
                 value="<?= $tvl["tanggal"]; ?>">
             </div>
+            <div class="mb-3">
+                <label for="details" class="form-label">details</label>
+                <input type="text" class="form-control" id="details" name="details" 
+                value="<?= $tvl["details"]; ?>">
+            </div>
             <button type="update" name="update" class="btn btn-dark">Update</button>
 </form>
     

@@ -17,7 +17,7 @@ keyword.addEventListener('keyup', function() {
     }
 
     // eksekusi ajax
-    xhr.open('GET', '../ajax/travel.php?keyword=' + keyword.value, true);
+    xhr.open('GET', '../ajax/user.php?keyword=' + keyword.value, true);
     xhr.send();
 
-})
+});

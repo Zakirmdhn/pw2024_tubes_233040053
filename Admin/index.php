@@ -52,7 +52,7 @@ if(isset($_POST["cari"])){
 
 <div id="container">
     <h1>Travel</h1>
-    <a href="tambah.php">Tambah Data</a>
+    <a href="tambah.php" class="btn btn-dark tambah" role="button">Tambah Data</a> <a href="cetak.php" class="btn btn-dark tambah" targer="_blank" >Cetak</a>
 
     <table class="table">
         <thead>
@@ -77,9 +77,13 @@ if(isset($_POST["cari"])){
             <td><?= $row["kota"]; ?></td>
             <td><?= $row["tanggal"]; ?></td>
             <td> 
-            <a href="update.php?id=<?= $row["id"]; ?>">update</a> |
-            <a href="delete.php?id=<?=  $row["id"]; ?>" onclick="return confirm('yakin?');">delete</a>
+            <td class="aksi">
             <a href="details.php?id=<?= $row["id"]; ?>" class="badge text-bg-dark text-decoration-none">details</a>
+            </td>
+            <td class="aksi">
+              <a href="update.php?id=<?= $row["id"]; ?>" class="badge text-bg-secondary text-decoration-none">update</a> |
+              <a href="delete.php?id=<?=  $row["id"]; ?>" class="badge text-bg-danger text-decoration-none" onclick="return confirm('yakin?');">delete</a>
+            </td>
 
             </td>
             </tr>
@@ -92,4 +96,6 @@ if(isset($_POST["cari"])){
 
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="../assert/js/script.js"></script>
 </html>

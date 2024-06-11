@@ -13,13 +13,13 @@ if (isset($_POST["login"])) {
     $login = login($_POST);
 }
 
-$sport = query("SELECT * FROM travel");
+$travel = query("SELECT * FROM travel");
 // $awalData, $jumlahDataPerHalaman
 
 
 //tombol cari diklik
 if (isset($_POST["cari"])) {
-  $sport = cari($_POST["keyword"]);
+  $travel = cari($_POST["keyword"]);
 }
 
 ?>
@@ -35,8 +35,7 @@ if (isset($_POST["cari"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/style1.css">
 
     <style>
         label {
@@ -49,7 +48,7 @@ if (isset($_POST["cari"])) {
     <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#sport">SPORT</a>
+      <a class="navbar-brand" href="#sport">Travel</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -70,19 +69,19 @@ if (isset($_POST["cari"])) {
   <!-- isi -->
   <section id= "sport">
   <div id="container" class="container">   
-    <center><h1>Stadion Indonesia</h1></center>
+    <center><h1>Unpas Travel</h1></center>
     <br>
 
 <div class="row">
-    <?php foreach ($sport as $spt) : ?>
+    <?php foreach ($travel as $row) : ?>
 <div class="col-lg-4 col-md-6 my-2  d-f;ex justify-content-around">
 
 <div class="card" style="width: 18rem;">
-  <img src="../img/<?= $spt["gambar"]; ?>" class="card-img-top" alt="...">
+  <img src="../asset/IMG/<?= $row["gambar"]; ?>" class="card-img-top" alt="...">
   <div class="card-body text-center" style="background-color:darkgrey;">
-    <h5 class="card-title"><?= $spt["nama"];?></h5>
+    <h5 class="card-title"><?= $row["nama"];?></h5>
     <br>
-    <a href="details.php?id=<?= $spt["id"]; ?>" class="badge text-bg-dark text-decoration-none">details</a>
+    <a href="details.php?id=<?= $row["id"]; ?>" class="badge text-bg-dark text-decoration-none">details</a>
   </div>
 </div>
 </div>

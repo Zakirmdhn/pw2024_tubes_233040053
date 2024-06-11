@@ -56,6 +56,10 @@ if (isset($_POST["submit"])) {
                 <label for="tanggal" class="form-label">tanggal</label>
                 <input type="date" class="form-control" id="tanggal" name="tanggal">
             </div>
+            <div class="mb-3">
+                <label for="details" class="form-label">Details</label>
+                <input type="text" class="form-control" id="details" name="details">
+             </div>
                 <button type="submit" name="submit" class="btn btn-outline-dark">Tambah</button>
         </form>
 </body>
